@@ -18,12 +18,17 @@ public class BasketServiceImpl implements BasketService {
     }
 
     @Override
-    public List<Item> addItemToBasket(int... id) {
+    public List<Item> addItemsToBasket(int... id) {
         List<Item> addedItems = new ArrayList<>();
         for (int i : id) {
             addedItems.add(new Item(i));
         }
         basket.addAll(addedItems);
         return addedItems;
+    }
+
+    @Override
+    public List<Item> getItemsFromBasket() {
+        return basket;
     }
 }

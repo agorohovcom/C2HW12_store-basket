@@ -22,11 +22,13 @@ public class BasketController {
 
     @GetMapping(value = "/add")
     public List<Item> addItemToBasket(@RequestParam int... id) {
-        return basketService.addItemToBasket(id);
+        return basketService.addItemsToBasket(id);
     }
 
-    @GetMapping("/1")
-    public String one() {
-        return "1";
+    @GetMapping(value = "/get")
+    public List<Item> getItemsFromBasket() {
+        return basketService.getItemsFromBasket();
     }
+
+
 }
