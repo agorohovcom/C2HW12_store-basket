@@ -1,6 +1,5 @@
 package com.agorohov.storebasket.controller;
 
-import com.agorohov.storebasket.dto.Item;
 import com.agorohov.storebasket.service.BasketService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,12 +20,12 @@ public class BasketController {
     }
 
     @GetMapping(value = "/add")
-    public List<Item> addItemToBasket(@RequestParam int... id) {
+    public List<Integer> addItemToBasket(@RequestParam int... id) {
         return basketService.addItemsToBasket(id);
     }
 
     @GetMapping(value = "/get")
-    public List<Item> getItemsFromBasket() {
+    public List<Integer> getItemsFromBasket() {
         return basketService.getItemsFromBasket();
     }
 

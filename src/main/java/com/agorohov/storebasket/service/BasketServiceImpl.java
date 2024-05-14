@@ -1,34 +1,28 @@
 package com.agorohov.storebasket.service;
 
-import com.agorohov.storebasket.dto.Item;
+import com.agorohov.storebasket.dto.Basket;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @SessionScope
 public class BasketServiceImpl implements BasketService {
 
-    private final List<Item> basket;
+    private final Basket basket;
 
     public BasketServiceImpl() {
-        basket = new ArrayList<>();
+        basket = new Basket();
     }
 
     @Override
-    public List<Item> addItemsToBasket(int... id) {
-        List<Item> addedItems = new ArrayList<>();
-        for (int i : id) {
-            addedItems.add(new Item(i));
-        }
-        basket.addAll(addedItems);
-        return addedItems;
+    public List<Integer> addItemsToBasket(int... id) {
+        return basket.addItems(id);
     }
 
     @Override
-    public List<Item> getItemsFromBasket() {
-        return basket;
+    public List<Integer> getItemsFromBasket() {
+        return basket.getItems();
     }
 }
