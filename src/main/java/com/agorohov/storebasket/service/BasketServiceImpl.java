@@ -1,13 +1,11 @@
 package com.agorohov.storebasket.service;
 
-import com.agorohov.storebasket.dto.Basket;
+import com.agorohov.storebasket.model.Basket;
 import org.springframework.stereotype.Service;
-import org.springframework.web.context.annotation.SessionScope;
 
 import java.util.List;
 
 @Service
-@SessionScope
 public class BasketServiceImpl implements BasketService {
 
     private final Basket basket;

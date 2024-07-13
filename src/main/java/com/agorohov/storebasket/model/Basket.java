@@ -1,8 +1,13 @@
-package com.agorohov.storebasket.dto;
+package com.agorohov.storebasket.model;
+
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.SessionScope;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
+@SessionScope
 public class Basket {
 
     private final List<Integer> items;
